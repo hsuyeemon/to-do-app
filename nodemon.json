@@ -1,0 +1,10 @@
+{
+    "env" : {
+        "MONGO_USER" : "admin",
+        "MONGO_PASSWORD" : "admin",
+        "MONGO_DB" : "cluster0"
+    },
+    "watch": ["src"],
+    "ext":".ts,.js",
+    "exec":"ts-node ./src/app.ts"
+}
