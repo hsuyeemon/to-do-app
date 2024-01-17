@@ -14,7 +14,7 @@ app.use(router);
 
 
 const MONGO_URL: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.6liv3rn.mongodb.net/?retryWrites=true&w=majority'`
-const options = { useNewUrlParser: true, useUnifiedTopology: true }
+//const options = { useNewUrlParser: true, useUnifiedTopology: true }
 //mongoose.set("useFindAndModify", false)
 
 
