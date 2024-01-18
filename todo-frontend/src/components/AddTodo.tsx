@@ -3,6 +3,7 @@ import React , { useState } from "react";
 type Props = { 
     saveTodo: (e: React.FormEvent, formData: ITodo | any) => void 
   }
+  
 const Todo: React.FC<Props> = ({ saveTodo  }) => {
     const [formData, setFormData] = useState<ITodo | {}>()
 

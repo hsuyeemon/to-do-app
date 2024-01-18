@@ -2,12 +2,12 @@
     "compilerOptions": {
       "target": "es6",
       "module": "commonjs",
-      "outDir": "dist/js",
-      "rootDir": "src",
+      "outDir": "todo-backend/dist/js",
+      "rootDir": "todo-backend/src",
       "strict": true,
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*"],
-    "exclude": ["src/types/*.ts", "node_modules", ".vscode"]
+    "include": ["todo-backend/src/**/*"],
+    "exclude": ["todo-backend/src/types/*.ts", "node_modules", ".vscode"]
   }

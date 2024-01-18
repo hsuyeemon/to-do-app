@@ -1,7 +1,7 @@
 import React , { useEffect , useState } from 'react';
 import TodoItem from './components/TodoItem'
 import AddTodo from './components/AddTodo'
-import { getTodos, addTodo } from './API'
+import { getTodos, addTodo , updateTodo } from './API'
 
 
 const App : React.FC = ()=> {
@@ -27,6 +27,16 @@ const App : React.FC = ()=> {
       })
       .catch(err => console.log(err))
   }
+  const handleUpdateTodo = (todo:ITodo) : void => {
+    updateTodo(todo)
+    .then(({status , data })=> {
+      if(status != 200){
+        throw new Error("Error ! Todo not updated")
+      }
+      setTodos(data.todos)
+    })
+    .catch(err => console.log(err))
+  }
 
   return (
     <main className='App'>
@@ -36,6 +46,7 @@ const App : React.FC = ()=> {
       <h2>All Todo</h2>
       {todos.map((todo:ITodo) => (
         <TodoItem key = {todo._id}
+        updateTodo={handleUpdateTodo}
         todo = {todo}
         />
       ))}

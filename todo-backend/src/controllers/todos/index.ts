@@ -42,3 +42,31 @@ export const addTodo =async (req:express.Request , res : express.Response) => {
     }
     
 }
+
+// update todo item
+
+export const updateTodo = async (req : express.Request , res : express.Response ) => {
+
+    try {
+        
+        const { _id , name , description , status } = req.body as ITodo ;
+
+        const todo = await TodoModel.findByIdAndUpdate(_id , {
+            name , description,status
+        })
+
+        console.log(todo)
+        const allTodos : ITodo[] = await TodoModel.find()
+
+        res.status(200).json({
+            message : "Todo updated",
+            todo : todo , 
+            todos : allTodos
+        })
+
+
+    } catch (error) {
+        throw error
+        
+    }
+}

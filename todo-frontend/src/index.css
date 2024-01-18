@@ -42,3 +42,12 @@ form {
   border : 1px silver solid;
   padding : 12px;
 }
+
+
+.line-through{
+  text-decoration: line-through;
+}
+
+.hide-button{
+  display: none;
+}
